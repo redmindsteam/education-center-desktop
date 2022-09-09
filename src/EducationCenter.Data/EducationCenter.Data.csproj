@@ -1,9 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EducationCenter.Domain\EducationCenter.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Courses\" />
+    <Folder Include="Interfaces\Employees\" />
+    <Folder Include="Interfaces\Positions\" />
+    <Folder Include="Interfaces\Subjects\" />
+    <Folder Include="Interfaces\Students\" />
+    <Folder Include="Interfaces\Teachers\" />
+    <Folder Include="Repositories\Courses\" />
+    <Folder Include="Repositories\Employees\" />
+    <Folder Include="Repositories\Positions\" />
+    <Folder Include="Repositories\Students\" />
+    <Folder Include="Repositories\Subjects\" />
+    <Folder Include="Repositories\Teachers\" />
+  </ItemGroup>
 
 </Project>
