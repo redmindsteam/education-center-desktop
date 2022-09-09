@@ -19,12 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\Courses\" />
-    <Folder Include="Interfaces\Employees\" />
-    <Folder Include="Interfaces\Positions\" />
-    <Folder Include="Interfaces\Subjects\" />
-    <Folder Include="Interfaces\Students\" />
-    <Folder Include="Interfaces\Teachers\" />
     <Folder Include="Repositories\Courses\" />
     <Folder Include="Repositories\Employees\" />
     <Folder Include="Repositories\Positions\" />
