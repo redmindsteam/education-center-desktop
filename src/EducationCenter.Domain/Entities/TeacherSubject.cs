@@ -1,6 +1,6 @@
 ﻿namespace EducationCenter.Domain.Entities;
 
-internal class TeacherSubject
+public class TeacherSubject
 {
     public long? TeacherId { get; set; }
     public virtual Teacher Teacher { get; set; }

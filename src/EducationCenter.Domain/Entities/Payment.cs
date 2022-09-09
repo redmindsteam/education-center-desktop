@@ -7,7 +7,7 @@ public abstract class Payment : BaseEntity
 {
     public float Amount { get; set; }
 
-    public DateTime ForMonth { get; set; }
+    public DateOnly ForMonth { get; set; }
 
     public PaymentType PaymentType { get; set; }
 

@@ -8,7 +8,7 @@ public class Staff : Person
 
     public string CardNumber { get; set; } = String.Empty;
 
-    public DateTime FirstWorkDate { get; set; }
+    public DateOnly FirstWorkDate { get; set; }
 
     public StaffStatus Status { get; set; }
 }

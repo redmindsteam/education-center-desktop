@@ -7,11 +7,11 @@ public class CourseDetail : BaseEntity
     public long? CourseId { get; set; }
     public virtual Course Course { get; set; }
 
-    public string StartTime { get; set; } = String.Empty;
+    public TimeOnly StartTime { get; set; }
 
     public DayOfWeek DayOfWeek { get; set; }
 
-    public string EndTime { get; set; } = String.Empty;
+    public TimeOnly EndTime { get; set; }
 
     public string Room { get; set; } = String.Empty;
 
