@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Configurations\" />
-    <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Validators\" />
