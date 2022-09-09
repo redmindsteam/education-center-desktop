@@ -1,4 +1,5 @@
-﻿using EducationCenter.Domain.Entities;
+﻿using EducationCenter.Domain.Constants;
+using EducationCenter.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EducationCenter.Data.DbContexts;
@@ -30,4 +31,11 @@ public class AppDbContext : DbContext
     public virtual DbSet<TeacherPayment> TeacherPayments { get; set; } = null!;
 
     public virtual DbSet<TeacherSubject> TeacherSubjects { get; set; } = null!;
+
+    public virtual DbSet<User> Users { get; set; } = null!;
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseNpgsql(DbConstants.CONNECTION_STRING);
+    }
 }
