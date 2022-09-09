@@ -18,4 +18,8 @@
     <ProjectReference Include="..\EducationCenter.Service\EducationCenter.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Assets\Images\" />
+  </ItemGroup>
+
 </Project>
