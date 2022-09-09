@@ -2,6 +2,6 @@
 
 namespace EducationCenter.Data.Interfaces.Teachers;
 
-public interface ITeacherSubjectRepository : IGenericRepository<Teacher>
+public interface ITeacherSubjectRepository : IGenericRepository<TeacherSubject>
 {
 }

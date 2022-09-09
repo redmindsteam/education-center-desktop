@@ -1,5 +1,8 @@
-﻿namespace EducationCenter.Data.Interfaces.Students;
+﻿using EducationCenter.Domain.Entities;
 
-public interface IStudentRepository
+namespace EducationCenter.Data.Interfaces.Students;
+
+public interface IStudentRepository 
+    : IGenericRepository<Student>
 {
 }

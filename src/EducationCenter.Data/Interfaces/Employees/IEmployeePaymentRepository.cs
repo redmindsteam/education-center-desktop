@@ -3,6 +3,6 @@
 namespace EducationCenter.Data.Interfaces.Employees;
 
 public interface IEmployeePaymentRepository
-    : IGenericRepository<Employee>
+    : IGenericRepository<EmployeePayment>
 {
 }
