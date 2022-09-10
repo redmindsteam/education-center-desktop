@@ -1,6 +1,8 @@
-﻿namespace EducationCenter.Domain.Entities;
+﻿using EducationCenter.Domain.Common;
 
-public class TeacherSubject
+namespace EducationCenter.Domain.Entities;
+
+public class TeacherSubject : BaseEntity
 {
     public long? TeacherId { get; set; }
     public virtual Teacher Teacher { get; set; }

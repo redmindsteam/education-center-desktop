@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -16,21 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EducationCenter.Domain\EducationCenter.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interfaces\Courses\" />
-    <Folder Include="Interfaces\Employees\" />
-    <Folder Include="Interfaces\Positions\" />
-    <Folder Include="Interfaces\Subjects\" />
-    <Folder Include="Interfaces\Students\" />
-    <Folder Include="Interfaces\Teachers\" />
-    <Folder Include="Repositories\Courses\" />
-    <Folder Include="Repositories\Employees\" />
-    <Folder Include="Repositories\Positions\" />
-    <Folder Include="Repositories\Students\" />
-    <Folder Include="Repositories\Subjects\" />
-    <Folder Include="Repositories\Teachers\" />
   </ItemGroup>
 
 </Project>

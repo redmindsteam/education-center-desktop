@@ -1,37 +1,53 @@
-﻿using EducationCenter.Data.Interfaces;
+﻿using EducationCenter.Data.DbContexts;
+using EducationCenter.Data.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace EducationCenter.Data.Repositories;
 
-public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
+public abstract class GenericRepository<T> 
+    : IGenericRepository<T> where T : class
 {
-    public Task<T> CreateAsync(Task entity)
+    protected readonly AppDbContext _dbContext;
+    protected DbSet<T> _dbSet;
+    public GenericRepository()
     {
-        throw new NotImplementedException();
+        _dbContext = new AppDbContext();
+        _dbSet = _dbContext.Set<T>();
     }
 
-    public Task<T> DeleteAsync(long id)
+    public virtual async Task<T> CreateAsync(T entity)
     {
-        throw new NotImplementedException();
+        var entry = await _dbSet.AddAsync(entity);
+        return entry.Entity;
     }
 
-    public Task<T> FindAsync(long id)
+    public virtual async Task<T> DeleteAsync(long id)
     {
-        throw new NotImplementedException();
+        var entity = await _dbSet.FindAsync(id);
+        _dbSet.Remove(entity);
+        return entity;
     }
 
-    public Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
+    public virtual async Task<T> FindAsync(long id)
     {
-        throw new NotImplementedException();
+        var entity = await _dbSet.FindAsync(id);
+        return entity;
     }
 
-    public Task<T> UpdateAsync(long id, T entity)
+    public virtual async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
     {
-        throw new NotImplementedException();
+        var entity = await _dbSet.FirstOrDefaultAsync(predicate);
+        return entity;
     }
 
-    public Task<IQueryable<T>> WhereAsync(Expression<Func<T, bool>> predicate)
+    public virtual async Task<T> UpdateAsync(long id, T entity)
     {
-        throw new NotImplementedException();
+        return _dbSet.Update(entity).Entity;
+    }
+
+    public virtual async Task<IQueryable<T>> WhereAsync(Expression<Func<T, bool>> predicate)
+    {
+        return predicate == null ? _dbSet : _dbSet.Where(predicate);
     }
 }
