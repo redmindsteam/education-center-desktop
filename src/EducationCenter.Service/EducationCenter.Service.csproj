@@ -14,10 +14,12 @@
     <Folder Include="Common\Configurations\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Common\Extensions\" />
-    <Folder Include="Common\Validators\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
 
 </Project>
