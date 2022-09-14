@@ -3,16 +3,96 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:EducationCenter.Desktop"
              StartupUri="MainWindow.xaml">
-    
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--Themes-->
                 <ResourceDictionary Source="Themes/LightTheme.xaml"/>
-
                 <ResourceDictionary Source="Assets/Icons/Icons.xaml"/>
 
+                <!--Styles-->
                 <ResourceDictionary Source="Styles/MainStyle.xaml"/>
+                <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+                
+                <!--Material Design-->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="{x:Type Window}" x:Key="SubWindow">
+                <Setter Property="WindowStyle" Value="None"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="AllowsTransparency" Value="True"/>
+                <Setter Property="ResizeMode" Value="NoResize"/>
+                <Setter Property="WindowState" Value="Normal"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Window}">
+                            <Border CornerRadius="8"
+                                    Background="{DynamicResource PrimaryBackgroundColor}"
+                                    Margin="10">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="LightGray" 
+                                                      ShadowDepth="0" 
+                                                      BlurRadius="9"/>
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <!--Header Start : Title | Menu Buttons-->
+                                    <Border Background="{DynamicResource SecundaryBackgroundColor}"
+                                        Grid.Row="0"
+                                        CornerRadius="8 8 0 0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border Grid.Column="0" 
+                                                    Background="{DynamicResource SecundaryBackgroundColor}"
+                                                    Margin="5 0 0 0" 
+                                                    Cursor="ScrollAll"
+                                                    MouseLeftButtonDown="brTitlePart_MouseDown"/>
+                                            <!-- Start: Button Close | Restore | Minimize -->
+                                            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft">
+                                                <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
+                                                <Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
+                                                    <Button.Style>
+                                                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
+                                                            <Setter Property="Content" Value="{DynamicResource maximize}"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=home, Path=WindowState}" Value="Maximized">
+                                                                    <Setter Property="Content" Value="{DynamicResource restore}"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                                <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                                            </StackPanel>
+                                            <!-- End: Button Close | Restore | Minimize -->
+                                        </Grid>
+                                    </Border>
+                                    <!--Header End : Title | Menu Buttons-->
+                                    
+                                    <!--Body Start--> 
+                                    <Grid Grid.Row="1" Margin="5">
+                                        <ContentPresenter/>
+                                    </Grid>
+                                    <!--Body End-->
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

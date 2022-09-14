@@ -55,9 +55,14 @@
 
                     <StackPanel Grid.Row="3">
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdHome_Click"/>
-                        <RadioButton x:Name="rdSounds" Content="Sounds" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource headphones}" Margin="0 5 0 5" Click="rdSounds_Click"/>
-                        <RadioButton x:Name="rdNotes" Content="Notes" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>
-                        <RadioButton x:Name="rdPayment" Content="Payment" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource payment}" Margin="0 5 0 5" Click="rdPayment_Click"/>
+                        <RadioButton x:Name="rdCourses" Content="Courses" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource courses}" Margin="0 5 0 5" Click="rdCourses_Click"/>
+                        <RadioButton x:Name="rdTeachers" Content="Teachers" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource teacher}" Margin="0 5 0 5" Click="rdTeachers_Click"/>
+                        <RadioButton x:Name="rdStudents" Content="Students" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource students}" Margin="0 5 0 5" Click="rdStudents_Click"/>
+                        <RadioButton x:Name="rdPayment" Content="Payments" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource payment}" Margin="0 5 0 5" Click="rdPayment_Click_1"/>
+                        <RadioButton x:Name="rdSubjects" Content="Subjects" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource subjects}" Margin="0 5 0 5" Click="rdSubjects_Click"/>
+                        <RadioButton x:Name="rdPosition" Content="Positions" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource position}" Margin="0 5 0 5" Click="rdPosition_Click"/>
+                        <RadioButton x:Name="rdSetting" Content="Settings" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource settings}" Margin="0 5 0 5" Click="rdSetting_Click"/>
+
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">
@@ -78,7 +83,7 @@
             <!-- Start: GridColumn Rigth -->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
@@ -101,7 +106,7 @@
                 </StackPanel>
                 <!-- End: Button Close | Restore | Minimize -->
 
-                <Border Grid.Row="1" Margin="10">
+                <Border Grid.Row="1" Margin="20 0 20 20">
                     <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">
                         <!-- Page Content -->
                     </Frame>

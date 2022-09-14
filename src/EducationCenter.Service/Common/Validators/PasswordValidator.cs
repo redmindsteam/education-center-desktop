@@ -4,6 +4,6 @@ public class PasswordValidator
 {
     public static bool IsStrong()
     {
-
+        return true;
     }
 }

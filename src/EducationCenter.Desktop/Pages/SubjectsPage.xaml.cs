@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace EducationCenter.Desktop.Pages
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for SubjectsPage.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class SubjectsPage : Page
     {
-        public Page1()
+        public SubjectsPage()
         {
             InitializeComponent();
         }
