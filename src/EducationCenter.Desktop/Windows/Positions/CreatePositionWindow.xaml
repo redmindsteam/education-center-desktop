@@ -6,10 +6,28 @@
         xmlns:local="clr-namespace:EducationCenter.Desktop.Windows.Positions"
         mc:Ignorable="d"
         Title="CreatePositionWindow" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Style="{DynamicResource SubWindow}"
-        Height="450" 
-        Width="800">
-    <Grid>
+        Height="200" 
+        Width="400">
+    <StackPanel>
+        <TextBox 
+           x:Name="tbPosition"
+           FontSize="13"
+           VerticalAlignment="Center"
+           Background="#FAFAFA"
+           HorizontalAlignment="Center"
+           materialDesign:HintAssist.Hint="Last name" 
+           BorderBrush="{DynamicResource MaterialDesignDivider}"
+           Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+           Width="384"/>
+
+        <Button
+            Margin="9"
+            Height="40"
+            Style="{StaticResource CreateButton}">
+            Create
+        </Button>
         
-    </Grid>
+    </StackPanel>
 </Window>
