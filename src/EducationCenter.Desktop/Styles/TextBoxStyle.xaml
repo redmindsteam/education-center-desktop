@@ -4,30 +4,35 @@
     <Style TargetType="{x:Type TextBox}" 
            x:Key="SearchBox">
         <Setter Property="Height" Value="35"/>
-        <Setter Property="Width" Value="200"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Padding="5" 
-                            materialDesign:ShadowAssist.ShadowDepth="Depth4">
-                        <materialDesign:ColorZone
-                            CornerRadius="5" 
-                            VerticalAlignment="Center" 
-                            Mode="Light"  
-                            Height="35">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon
-                                    Kind="search" 
-                                    VerticalAlignment="Center" 
-                                    Margin="10 0 5 0" />
-                                <TextBox Margin="5,4,0,4" 
-                                         FontSize="14" 
-                                         materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" 
-                                         VerticalAlignment="Center" 
-                                         BorderThickness="0" 
-                                         materialDesign:HintAssist.Hint ="Search ..."/>
-                            </StackPanel>
-                        </materialDesign:ColorZone>
+                    <Border Padding="5" Background="{TemplateBinding Background}"
+                            CornerRadius="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="35"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBox Grid.Column="0"
+                                     BorderThickness="0"
+                                     VerticalAlignment="Center"
+                                     FontSize="14"
+                                     Margin="5 0"
+                                     materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
+                                     materialDesign:HintAssist.Hint="Search ..."/>
+
+                            <materialDesign:PackIcon
+                                Foreground="{DynamicResource PrimaryGrayColor}"
+                                Grid.Column="1"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Width="25"
+                                Height="25"
+                                Kind="Magnify"/>
+                            
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

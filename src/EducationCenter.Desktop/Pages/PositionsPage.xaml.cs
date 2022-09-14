@@ -1,4 +1,6 @@
-﻿using EducationCenter.Service.ViewModels.Positions;
+﻿using EducationCenter.Desktop.Windows.Positions;
+using EducationCenter.Desktop.Windows.Students;
+using EducationCenter.Service.ViewModels.Positions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +38,12 @@ namespace EducationCenter.Desktop.Pages
             };
 
             dgData.ItemsSource = positionBaseViewModels;
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePositionWindow positionWindow = new CreatePositionWindow();
+            positionWindow.ShowDialog();
         }
     }
 }
