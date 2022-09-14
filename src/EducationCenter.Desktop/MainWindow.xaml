@@ -83,7 +83,7 @@
             <!-- Start: GridColumn Rigth -->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
@@ -106,7 +106,7 @@
                 </StackPanel>
                 <!-- End: Button Close | Restore | Minimize -->
 
-                <Border Grid.Row="1" Margin="10">
+                <Border Grid.Row="1" Margin="20 0 20 20">
                     <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">
                         <!-- Page Content -->
                     </Frame>

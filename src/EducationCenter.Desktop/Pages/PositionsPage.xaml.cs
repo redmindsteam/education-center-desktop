@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationCenter.Service.ViewModels.Positions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace EducationCenter.Desktop.Pages
         public PositionsPage()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<PositionViewModel> positionBaseViewModels = new List<PositionViewModel>()
+            {
+                new PositionViewModel(){ Id = 110101, Name="Teacher", CountStaffsOfPosition = 20, Status="Active"},
+                new PositionViewModel(){ Id = 110102, Name="Accountent", CountStaffsOfPosition = 4, Status="Active"},
+                new PositionViewModel(){ Id = 110103, Name="Head", CountStaffsOfPosition = 2, Status="Deleted"}
+            };
+
+            dgData.ItemsSource = positionBaseViewModels;
         }
     }
 }
