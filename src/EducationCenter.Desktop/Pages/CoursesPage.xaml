@@ -8,6 +8,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CoursesPage">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -60,20 +61,28 @@
                 <DataGridTextColumn Header="Id"
                                     Width="100" 
                                     Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="First name"
-                                    Width="200"
-                                    Binding="{Binding FirstName}"
+                <DataGridTextColumn Header="Name"
+                                    Width="5*"
+                                    Binding="{Binding Name}"
                                     />
-                <DataGridTextColumn Header="Last name"
-                                    Width="200"
-                                    Binding="{Binding LastName}"
+                <DataGridTextColumn Header="Level"
+                                    Width="3*"
+                                    Binding="{Binding Level}"
                                     />
-                <DataGridTextColumn Header="Phone"
-                                    Width="150"
-                                    Binding="{Binding PhoneNumber}"
+                <DataGridTextColumn Header="Price"
+                                    Width="100"
+                                    Binding="{Binding Price}"
+                                    />
+                <DataGridTextColumn Header="Subject"
+                                    Width="3*"
+                                    Binding="{Binding SubjectName}"
+                                    />
+                <DataGridTextColumn Header="Lenguage"
+                                    Width="2*"
+                                    Binding="{Binding Language}"
                                     />
                 <DataGridTemplateColumn Header="Status"
-                                        Width="100">
+                                        Width="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Border CornerRadius="10" 
@@ -110,7 +119,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="View"
-                                    Width="100">
+                                    Width="95">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
