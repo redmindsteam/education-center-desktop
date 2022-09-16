@@ -12,9 +12,8 @@
 
   <ItemGroup>
     <Folder Include="Common\Configurations\" />
-    <Folder Include="Common\Helpers\" />
     <Folder Include="Common\Extensions\" />
-    <Folder Include="Services\" />
+    <Folder Include="Common\Helpers\" />
   </ItemGroup>
 
   <ItemGroup>

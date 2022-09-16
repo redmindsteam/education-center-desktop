@@ -24,5 +24,15 @@ namespace EducationCenter.Desktop.Pages
         {
             InitializeComponent();
         }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

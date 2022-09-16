@@ -2,6 +2,6 @@
 {
     public enum StudentStatus
     {
-        Active, Freeze, Deleted
+        Active, Freeze, Deleted, Finished
     }
 }

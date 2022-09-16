@@ -38,4 +38,8 @@ public class AppDbContext : DbContext
     {
         optionsBuilder.UseNpgsql(DbConstants.CONNECTION_STRING);
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Seed();
+    }
 }
