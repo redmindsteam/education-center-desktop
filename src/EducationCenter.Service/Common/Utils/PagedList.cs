@@ -28,4 +28,13 @@ public class PagedList<T> : List<T>
             .ToListAsync();
         return new PagedList<T>(items, count, pageNumber, pageSize);
     }
+    public async static Task<PagedList<T>> ToPagedListAsync(
+        IQueryable<T> source, PaginationParams @params)
+    {
+        var count = await source.CountAsync();
+        var items = await source.Skip(
+            (@params.PageNumber - 1) * @params.PageSize).Take(@params.PageSize)
+            .ToListAsync();
+        return new PagedList<T>(items, count, @params.PageNumber, @params.PageSize);
+    }
 }

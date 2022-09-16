@@ -1,17 +1,7 @@
-﻿using System;
+﻿using EducationCenter.Service.ViewModels.Students;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EducationCenter.Desktop.Pages
 {
@@ -23,6 +13,24 @@ namespace EducationCenter.Desktop.Pages
         public StudentsPage()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<StudentViewModel> studentViewModels = new List<StudentViewModel>()
+            {
+                new StudentViewModel(){ Id = 1001, FullName = "Karimov Olim",Email = "Olim@gmail.com", CountOfCourses=4, PhoneNumber="+998954454312", Status=Domain.Enums.StudentStatus.Active},
+                new StudentViewModel(){ Id = 1002, FullName = "Salimov Komil", Email = "Salim@gmail.com", CountOfCourses=4, PhoneNumber="+998954454312", Status=Domain.Enums.StudentStatus.Freeze},
+                new StudentViewModel(){ Id = 1003, FullName = "Abdulkarimxo'jayev MuhammadAbdulloh", Email = "Salim@gmail.com", CountOfCourses=4, PhoneNumber="+998954454312", Status=Domain.Enums.StudentStatus.Deleted},
+                new StudentViewModel(){ Id = 1004, FullName = "Saidkamolov Abdullaxo'ja", Email = "AbdullaKarimov@gmail.com", CountOfCourses=2, PhoneNumber="+998954454312", Status=Domain.Enums.StudentStatus.Finished},
+            };
+
+            dgData.ItemsSource = studentViewModels;
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using EducationCenter.Desktop.Windows.Positions;
 using EducationCenter.Desktop.Windows.Students;
+using EducationCenter.Service.Common.Utils;
+using EducationCenter.Service.Services.Positions;
 using EducationCenter.Service.ViewModels.Positions;
 using System;
 using System.Collections.Generic;
@@ -23,21 +25,24 @@ namespace EducationCenter.Desktop.Pages
     /// </summary>
     public partial class PositionsPage : Page
     {
+        private readonly PositionService _positionService;
         public PositionsPage()
         {
             InitializeComponent();
+            this._positionService = new PositionService();
         }
 
-        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        private async void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            List<PositionViewModel> positionBaseViewModels = new List<PositionViewModel>()
+            List<PositionViewModel> positionViewModels = new List<PositionViewModel>()
             {
                 new PositionViewModel(){ Id = 110101, Name="Teacher", CountStaffsOfPosition = 20, Status="Active"},
                 new PositionViewModel(){ Id = 110102, Name="Accountent", CountStaffsOfPosition = 4, Status="Active"},
                 new PositionViewModel(){ Id = 110103, Name="Head", CountStaffsOfPosition = 2, Status="Deleted"}
             };
-
-            dgData.ItemsSource = positionBaseViewModels;
+            //PaginationParams @params = new PaginationParams(1, 50);
+            //var positionViewModels = await _positionService.GetAllAsync(@params);
+            dgData.ItemsSource = positionViewModels;
         }
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)

@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 
 namespace EducationCenter.Data.Repositories;
 
+#pragma warning disable
 public abstract class GenericRepository<T> 
     : IGenericRepository<T> where T : class
 {
@@ -39,6 +40,11 @@ public abstract class GenericRepository<T>
     {
         var entity = await _dbSet.FirstOrDefaultAsync(predicate);
         return entity;
+    }
+
+    public virtual async Task<IQueryable<T>> GetAllAsync()
+    {
+        return _dbSet;
     }
 
     public virtual async Task<T> UpdateAsync(long id, T entity)

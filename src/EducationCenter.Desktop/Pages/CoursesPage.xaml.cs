@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EducationCenter.Domain.Enums;
+using EducationCenter.Service.ViewModels.Courses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,20 @@ namespace EducationCenter.Desktop.Pages
         public CoursesPage()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<CourseViewModel> courses = new List<CourseViewModel>()
+            {
+                new CourseViewModel(){ Id = 12, Name = ".Net bootcamp 4", Language="Uz", Level="Pre Ielts", Price=2200000, SubjectName="Ingliz tili", Status=CourseStatus.Active}
+            };
+            dgData.ItemsSource = courses;
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
