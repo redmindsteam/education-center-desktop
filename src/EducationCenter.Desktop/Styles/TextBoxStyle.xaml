@@ -7,7 +7,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Padding="5" Background="{TemplateBinding Background}"
+                    <Border Padding="5" Background="{DynamicResource SecundaryBackgroundColor}"
                             CornerRadius="5">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -20,6 +20,7 @@
                                      VerticalAlignment="Center"
                                      FontSize="14"
                                      Margin="5 0"
+                                     Foreground="{DynamicResource TextSecundaryColor}"
                                      materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
                                      materialDesign:HintAssist.Hint="Search ..."/>
 
