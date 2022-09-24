@@ -7,8 +7,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PaymentsPage">
-
     <Grid>
-        
+        <TabControl Style="{DynamicResource FlatTabControlStyle}"
+                    Padding="15">
+            <TabItem Header="Student payments" IsSelected="True"
+                     Style="{StaticResource FlatTabItemStyle}">
+                <Label Content="Content goes here..." />
+            </TabItem>
+            <TabItem Header="Teacher payments" 
+                     Style="{StaticResource FlatTabItemStyle}"/>
+            <TabItem Header="Employee payments" 
+                     Style="{StaticResource FlatTabItemStyle}"/>
+        </TabControl>
     </Grid>
 </Page>

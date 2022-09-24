@@ -14,6 +14,13 @@ public class PasswordHasher : IPasswordHasher
                 salt: salt);
     }
 
+    public bool Verify(string password, string salt, string hash)
+    {
+        string strongpassword = _key + salt + password;
+        string newhash = BCrypt.Net.BCrypt.HashPassword(strongpassword);
+        return hash == newhash;
+    }
+
     private string GenerateSalt()
     {
         string salt = Guid.NewGuid().ToString();

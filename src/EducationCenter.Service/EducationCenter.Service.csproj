@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Common\Validators\PasswordValidator.cs~RFd80e0f.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\EducationCenter.Data\EducationCenter.Data.csproj" />
   </ItemGroup>
 

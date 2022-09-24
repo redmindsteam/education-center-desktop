@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="TabControl" x:Key="FlatTabControlStyle">
+        <Setter Property="Background" Value="{DynamicResource SecundaryBackgroundColor}" />
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    
+    <Style TargetType="TabItem" x:Key="FlatTabItemStyle">
+        <Setter Property="Margin" Value="-2 0 0 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid Name="Panel" Height="50" Cursor="Hand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="brTick" Grid.Row="0"/>
+                        <StackPanel Grid.Row="1"
+                                    Margin="15 0"
+                                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <Border x:Name="Thumb" CornerRadius="100" 
+                                    Height="10" Width="10"/>
+                            <Label x:Name="lbHeader"
+                                FontSize="15" FontWeight="Normal"
+                                Margin="2 0">
+                                <ContentPresenter ContentSource="Header"/>
+                            </Label>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="brTick" Property="Background" Value="#50C878" />
+                            <Setter TargetName="Thumb" Property="Background" Value="#50C878" />
+                            <Setter TargetName="lbHeader" Property="Foreground" Value="#50C878" />
+                            <Setter TargetName="Panel" Property="Background" Value="{DynamicResource SecundaryBackgroundColor}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Panel" Property="Background" Value="{StaticResource TetriaryBackgroundColor}" />
+                            <Setter TargetName="Thumb" Property="Background" Value="{DynamicResource PrimaryBackgroundColor}" />
+                            <Setter TargetName="lbHeader" Property="Foreground" Value="{DynamicResource TextTetriaryColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

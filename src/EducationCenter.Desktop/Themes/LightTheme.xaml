@@ -2,9 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- Background Colors -->
-    <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#f3f3f3"/>
-    <SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#f9f9f9"/>
-
+    <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#EAEAEA"/>
+    <SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#FCFCFC"/>
+    <SolidColorBrush x:Key="TetriaryBackgroundColor" Color="#F6F6F6"/>
+    
     <!-- Primary Colors -->
     <SolidColorBrush x:Key="PrimaryBlueColor" Color="#5B7FFF"/>
     <SolidColorBrush x:Key="PrimaryGrayColor" Color="#BFBFC4"/>
@@ -16,6 +17,7 @@
     <!-- Typograhy Colors -->
     <SolidColorBrush x:Key="TextPrimaryColor" Color="#020F16"/>
     <SolidColorBrush x:Key="TextSecundaryColor" Color="#434344"/>
+    <SolidColorBrush x:Key="TextTetriaryColor" Color="#585859"/>
 
     <!-- Icons Colors -->
     <SolidColorBrush x:Key="ActionIconColor" Color="#434344"/>
