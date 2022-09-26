@@ -36,7 +36,7 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Window}">
                             <Border CornerRadius="8"
-                                    Background="{DynamicResource PrimaryBackgroundColor}"
+                                    Background="{DynamicResource SecundaryBackgroundColor}"
                                     Margin="10">
                                 <Border.Effect>
                                     <DropShadowEffect Color="LightGray" 
@@ -51,6 +51,8 @@
                                     <!--Header Start : Title | Menu Buttons-->
                                     <Border Background="{DynamicResource SecundaryBackgroundColor}"
                                         Grid.Row="0"
+                                        BorderThickness="0 0 0 1"
+                                        BorderBrush="{DynamicResource TextSecundaryColor}"
                                         CornerRadius="8 8 0 0">
                                         <Grid>
                                             <Grid.ColumnDefinitions>

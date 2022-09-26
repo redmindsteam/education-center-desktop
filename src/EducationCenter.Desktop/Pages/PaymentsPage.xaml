@@ -3,21 +3,31 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:EducationCenter.Desktop.Pages"
+      xmlns:pages="clr-namespace:EducationCenter.Desktop.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PaymentsPage">
     <Grid>
         <TabControl Style="{DynamicResource FlatTabControlStyle}"
-                    Padding="15">
+                    Padding="5">
             <TabItem Header="Student payments" IsSelected="True"
                      Style="{StaticResource FlatTabItemStyle}">
-                <Label Content="Content goes here..." />
+                <Frame NavigationUIVisibility="Hidden"
+                       Source="StudentPaymentsPage.xaml">
+                </Frame>
             </TabItem>
             <TabItem Header="Teacher payments" 
-                     Style="{StaticResource FlatTabItemStyle}"/>
+                     Style="{StaticResource FlatTabItemStyle}">
+                <Frame NavigationUIVisibility="Hidden"
+                       Source="TeacherPaymentsPage.xaml">
+                </Frame>
+            </TabItem>
             <TabItem Header="Employee payments" 
-                     Style="{StaticResource FlatTabItemStyle}"/>
+                     Style="{StaticResource FlatTabItemStyle}">
+                <Frame NavigationUIVisibility="Hidden"
+                       Source="EmployeePaymentsPage.xaml">
+                </Frame>
+            </TabItem>
         </TabControl>
     </Grid>
 </Page>
