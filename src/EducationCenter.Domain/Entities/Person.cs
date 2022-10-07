@@ -8,17 +8,17 @@ public abstract class Person : Auditable
 
     public string LastName { get; set; } = String.Empty;
 
-    public string MiddleName { get; set; } = String.Empty;
+    public string? MiddleName { get; set; } 
 
-    public DateTime BirthDate { get; set; }
+    public DateTime? BirthDate { get; set; }
 
     public string PhoneNumber { get; set; } = String.Empty;
 
     public string Email { get; set; } = String.Empty;
 
-    public string Description { get; set; } = String.Empty;
+    public string? Description { get; set; }
 
-    public string ImagePath { get; set; } = String.Empty;
+    public string? ImagePath { get; set; }
 
-    public string Address { get; set; } = String.Empty;
+    public string? Address { get; set; }
 }

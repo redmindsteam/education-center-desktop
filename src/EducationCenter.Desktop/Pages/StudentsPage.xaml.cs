@@ -1,4 +1,5 @@
-﻿using EducationCenter.Service.ViewModels.Students;
+﻿using EducationCenter.Desktop.Windows.Students;
+using EducationCenter.Service.ViewModels.Students;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,7 +31,8 @@ namespace EducationCenter.Desktop.Pages
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-
+            StudentCreateWindow studentCreateWindow = new StudentCreateWindow();
+            studentCreateWindow.ShowDialog();
         }
     }
 }

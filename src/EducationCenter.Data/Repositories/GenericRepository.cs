@@ -11,9 +11,9 @@ public abstract class GenericRepository<T>
 {
     protected readonly AppDbContext _dbContext;
     protected DbSet<T> _dbSet;
-    public GenericRepository()
+    public GenericRepository(AppDbContext appDbContext)
     {
-        _dbContext = new AppDbContext();
+        _dbContext = appDbContext;
         _dbSet = _dbContext.Set<T>();
     }
 

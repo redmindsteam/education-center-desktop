@@ -9,6 +9,7 @@
     <!-- Primary Colors -->
     <SolidColorBrush x:Key="PrimaryBlueColor" Color="#5B7FFF"/>
     <SolidColorBrush x:Key="PrimaryGrayColor" Color="#BFBFC4"/>
+    <SolidColorBrush x:Key="PrimaryBorderColor" Color="Gray" />
 
     <!-- Secundary Colors -->
     <SolidColorBrush x:Key="SecundaryBlueColor" Color="#CEE8FB"/>

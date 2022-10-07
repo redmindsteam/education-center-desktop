@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="EducationCenter.Desktop.UserControls.Special.ImageSelectorUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EducationCenter.Desktop.UserControls.Special"
+             mc:Ignorable="d" 
+             Height="210" 
+             Width="180">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" 
+                Margin="2"
+                BorderThickness="0.2"
+                BorderBrush="{DynamicResource PrimaryBorderColor}"
+                Background="Silver">
+            <Image x:Name="ImgBox" 
+               Stretch="UniformToFill" 
+               Source="{Binding Text, ElementName= tbImage}">
+            </Image>
+        </Border>
+        
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Border Background="Silver"
+                         Margin="2">
+                    <TextBox x:Name="tbImage" 
+                             IsReadOnly="True" 
+                             FontSize="14"
+                             VerticalAlignment="Center"
+                             />
+                </Border>
+                <Border Grid.Column="1"
+                        Margin="2"
+                        CornerRadius="5"
+                        MouseUp="Border_MouseUp" 
+                        Cursor="Hand" 
+                        BorderThickness="1"
+                        BorderBrush="{DynamicResource PrimaryBorderColor}"
+                        Background="Silver">
+                    <TextBlock FontWeight="UltraBold" 
+                               FontSize="18" 
+                               Text="..."
+                               HorizontalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

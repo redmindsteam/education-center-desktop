@@ -8,6 +8,10 @@ namespace EducationCenter.Data.Repositories.Positions
     public class PositionRepository : GenericRepository<Position>,
         IPositionRepository
     {
+        public PositionRepository(AppDbContext appDbContext) : base(appDbContext)
+        {
+        }
+
         public async Task<int> CountStaffsAsync(long positionId)
         {
             var position = await _dbContext.Positions.FindAsync(positionId);

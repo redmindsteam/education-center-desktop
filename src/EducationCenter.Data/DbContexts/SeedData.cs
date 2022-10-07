@@ -13,8 +13,8 @@ namespace EducationCenter.Data.DbContexts
                 {
                     Id = 1,
                     Name = "Teacher",
-                    CreatedDate = DateTime.Now,
-                    UpdatedDate = DateTime.Now,
+                    CreatedDate = DateTime.UtcNow,
+                    UpdatedDate = DateTime.UtcNow,
                     Status = Domain.Enums.PositionStatus.Active
                 });
         }

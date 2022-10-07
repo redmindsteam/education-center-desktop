@@ -39,9 +39,7 @@
                                     Background="{DynamicResource SecundaryBackgroundColor}"
                                     Margin="10">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="LightGray" 
-                                                      ShadowDepth="0" 
-                                                      BlurRadius="9"/>
+                                    <DropShadowEffect Color="LightGray" ShadowDepth="0" BlurRadius="9"/>
                                 </Border.Effect>
                                 <Grid>
                                     <Grid.RowDefinitions>
@@ -50,10 +48,8 @@
                                     </Grid.RowDefinitions>
                                     <!--Header Start : Title | Menu Buttons-->
                                     <Border Background="{DynamicResource SecundaryBackgroundColor}"
-                                        Grid.Row="0"
-                                        BorderThickness="0 0 0 1"
-                                        BorderBrush="{DynamicResource TextSecundaryColor}"
-                                        CornerRadius="8 8 0 0">
+                                        Grid.Row="0" BorderThickness="0 0 0 1"
+                                        BorderBrush="Silver" CornerRadius="8 8 0 0">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
@@ -87,7 +83,7 @@
                                     <!--Header End : Title | Menu Buttons-->
                                     
                                     <!--Body Start--> 
-                                    <Grid Grid.Row="1" Margin="5">
+                                    <Grid Grid.Row="1" Margin="10">
                                         <ContentPresenter/>
                                     </Grid>
                                     <!--Body End-->

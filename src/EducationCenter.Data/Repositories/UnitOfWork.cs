@@ -37,22 +37,21 @@ public class UnitOfWork : IUnitOfWork
 
     public UnitOfWork()
     {
-        AppDbContext appDbContext = new AppDbContext();
-        _dbContext = appDbContext;
-        Courses = new CourseRepository();
-        CourseDetails = new CourseDetailRepository();
-        CourseStudents = new CourseStudentRepository();
-        CourseTeachers = new CourseTeacherRepository();
-        Employees = new EmployeeRepository();
-        EmployeePayments = new EmployeePaymentRepository();
-        Positions = new PositionRepository();
-        Students = new StudentRepository();
-        StudentPayments = new StudentPaymentRepository();
-        Subjects = new SubjectRepository();
-        Teachers = new TeacherRepository();
-        TeacherPayments = new TeacherPaymentRepository();
-        TeacherSubjects = new TeacherSubjectRepository();
-        Users = new UserRepository();
+        _dbContext = new AppDbContext();
+        Courses = new CourseRepository(_dbContext);
+        CourseDetails = new CourseDetailRepository(_dbContext);
+        CourseStudents = new CourseStudentRepository(_dbContext);
+        CourseTeachers = new CourseTeacherRepository(_dbContext);
+        Employees = new EmployeeRepository(_dbContext);
+        EmployeePayments = new EmployeePaymentRepository(_dbContext);
+        Positions = new PositionRepository(_dbContext);
+        Students = new StudentRepository(_dbContext);
+        StudentPayments = new StudentPaymentRepository(_dbContext);
+        Subjects = new SubjectRepository(_dbContext);
+        Teachers = new TeacherRepository(_dbContext);
+        TeacherPayments = new TeacherPaymentRepository(_dbContext);
+        TeacherSubjects = new TeacherSubjectRepository(_dbContext);
+        Users = new UserRepository(_dbContext);
     }
 
     public async Task SaveChangesAsync()

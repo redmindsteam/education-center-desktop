@@ -35,8 +35,6 @@ public partial class MainWindow : Window
     private void rdHome_Click(object sender, RoutedEventArgs e)
     {
         // PagesNavigation.Navigate(new HomePage());
-        CreateStudentWindow createStudentWindow = new CreateStudentWindow();
-        createStudentWindow.Show();
         PagesNavigation.Navigate(new System.Uri("Pages/HomePage.xaml", UriKind.RelativeOrAbsolute));
     }
 

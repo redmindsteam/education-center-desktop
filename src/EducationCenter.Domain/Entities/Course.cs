@@ -24,10 +24,5 @@ public class Course : Auditable
     public CourseStatus CourseStatus { get; set; }
 
     public long? SubjectId { get; set; }
-    public virtual Subject Subject { get; set; }
-
-    public Course()
-    {
-        Subject = new Subject();
-    }
+    public virtual Subject Subject { get; set; } = null!;
 }

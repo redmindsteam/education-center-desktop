@@ -3,6 +3,7 @@ using System;
 using EducationCenter.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EducationCenter.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221007204429_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,7 +178,7 @@ namespace EducationCenter.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("BirthDate")
+                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CardNumber")
@@ -296,10 +298,10 @@ namespace EducationCenter.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            CreatedDate = new DateTime(2022, 10, 7, 20, 45, 51, 375, DateTimeKind.Utc).AddTicks(9457),
+                            CreatedDate = new DateTime(2022, 10, 7, 20, 44, 29, 551, DateTimeKind.Utc).AddTicks(9776),
                             Name = "Teacher",
                             Status = 0,
-                            UpdatedDate = new DateTime(2022, 10, 7, 20, 45, 51, 375, DateTimeKind.Utc).AddTicks(9457)
+                            UpdatedDate = new DateTime(2022, 10, 7, 20, 44, 29, 551, DateTimeKind.Utc).AddTicks(9776)
                         });
                 });
 
@@ -314,7 +316,7 @@ namespace EducationCenter.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("BirthDate")
+                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("CreatedDate")
@@ -429,7 +431,7 @@ namespace EducationCenter.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("BirthDate")
+                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CardNumber")

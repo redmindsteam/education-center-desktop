@@ -5,7 +5,7 @@ namespace EducationCenter.Domain.Entities;
 public class CourseDetail : BaseEntity
 {
     public long? CourseId { get; set; }
-    public virtual Course Course { get; set; }
+    public virtual Course Course { get; set; } = null!;
 
     public TimeOnly StartTime { get; set; }
 
@@ -14,9 +14,4 @@ public class CourseDetail : BaseEntity
     public TimeOnly EndTime { get; set; }
 
     public string Room { get; set; } = String.Empty;
-
-    public CourseDetail()
-    {
-        Course = new Course();
-    }
 }
